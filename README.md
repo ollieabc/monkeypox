@@ -1,6 +1,6 @@
 # monkeypox
 
-page 1: selecting a symptom and it being explain such as how likely it is to have this syptom.
+page 1: graph showing the total cases in a month
 
 page 2: and a graph showing deaths by years 
 
