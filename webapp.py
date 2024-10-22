@@ -26,10 +26,10 @@ def get_cases_day():
     print(cases)
     return cases
     
-@app.route("/")
+@app.route("/f3")
 def render_file3():
     deaths = get_deaths_day()
-    return render_template('file3.html', data1 = deaths)
+    return render_template('file3.html', deaths = deaths)
 
 def get_deaths_day():
     with open('monkeypox.json') as monkeypox:
@@ -37,13 +37,23 @@ def get_deaths_day():
     deaths = "["
     for m in mpoxdata:
         if m["Date"]["Month"] == 8:
-            if m["Country"]["Full"] == "Spain":
-                deaths= deaths + Markup ("{ x: " + str(m["Date"]["Day"]) + ", y: " +str(m["Deaths"]["New"]) + "},") #{x: 8, y: 10}
+            if m["Country"]["Full"] == "World":
+                deaths= deaths + Markup ("{ x: " + str(m["Date"]["Day"]) + ", y: " +str(m["Data"]["Deaths"]["Total"]) + "},") #{x: 8, y: 10}
     deaths = deaths[:-1] + "]"
     print(deaths)
     return deaths
     
     
+@app.route("/f1")
+def render_file11():
+      return render_template('file1.html')
+@app.route("/f2")
+def render_file21():
+      return render_template('file2.html')
+@app.route("/f3")
+def render_file31():
+      return render_template('file3.html')
+
      
         
         
@@ -57,7 +67,18 @@ def get_deaths_day():
     
 if __name__=="__main__":
     app.run(debug=True)
-    
-
-    
-    
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  

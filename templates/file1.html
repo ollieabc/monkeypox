@@ -1,5 +1,11 @@
 
+{% extends "layout.html" %}
 
+{% set active_page = "file4" %}
+
+{% block title %}file4{% endblock %}
+
+{% block content %}
 <html lang="en">
 <head>
   <title>Bootstrap Example</title>
@@ -10,21 +16,7 @@
 </head>
 <body>
 
-<nav class="navbar navbar-expand-sm bg-light">
-  <div class="container-fluid">
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link 1</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link 2</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link 3</a>
-      </li>
-    </ul>
-  </div>
-</nav>
+
 
 <div class="container-fluid mt-3">
   <h3>Monkeypox</h3>
@@ -36,3 +28,5 @@
 <p>for more information regarding there data please visit <a href= "https://www.who.int/docs/default-source/coronaviruse/situation-reports/20240812_mpox_external-sitrep_35.pdf">WHO mpox data
 </body>
 </html>
+
+{% endblock %}
