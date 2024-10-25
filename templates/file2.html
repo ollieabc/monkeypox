@@ -1,16 +1,32 @@
 {% extends "layout.html" %}
 
-{% set active_page = "file4" %}
+{% set active_page = "file2" %}
 
-{% block title %}file4{% endblock %}
+{% block title %}file2{% endblock %}
 
 {% block content %}
-<html>
-<head>
-<h1>Mpox cases and deaths in a country</h1>
-<p>Select a country</p>
 
-</head>
+
+
+
+<html>
+    <head>
+        <title>Monkeypox per million</title>
+    </head>
+    <body>
+
+        <form action="/f5">
+          <select name="day"> 
+            {{ day_options }}
+          </select>
+          <br><br>
+          <input type="submit" value="Get cases per million!">
+        </form>
+
+    </body>
 </html>
+
+
+
 
 {% endblock %}

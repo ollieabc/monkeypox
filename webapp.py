@@ -47,9 +47,6 @@ def get_deaths_day():
 @app.route("/f1")
 def render_file11():
       return render_template('file1.html')
-@app.route("/f2")
-def render_file21():
-      return render_template('file2.html')
 @app.route("/f3")
 def render_file31():
       return render_template('file3.html')
@@ -65,20 +62,50 @@ def render_file31():
 
 
     
+
+  
+  
+  
+@app.route("/f5")
+def render_file5():
+    fact = get_cases_mill(request.args["day"])
+    casesm = get_casesm_day()
+    print(fact)
+    return render_template('file5.html', day_options = casesm, coolFact = fact)
+  
+ 
+  
+@app.route("/f2")
+def render_file2():
+    casesm = get_casesm_day()
+   
+    return render_template('file2.html', day_options = casesm)
+    
+  
+  
+def get_casesm_day():
+    with open('monkeypox.json') as monkeypox1:
+        mpoxdata1 = json.load(monkeypox1)
+    casesm =""
+    print(mpoxdata1)
+    for m in mpoxdata1:
+        print(m["Date"]["Month"])
+        if m["Date"]["Month"] == 8:
+            print("here")
+            if m["Country"]["Full"] == "World":
+                casesm += Markup("<option value=\"" + str(m["Date"]["Day"]) + "\">" + str(m["Date"]["Day"]) + "</option>")
+    print(casesm)
+    return casesm
+
+def get_cases_mill(day):
+    with open('monkeypox.json') as monkeypox1:
+        mpoxdata2 = json.load(monkeypox1)
+    fact = ""
+    for m in mpoxdata2:
+         if m["Date"]["Month"] == day:
+            if m["Country"]["Full"] == "World":
+               fact = "On " + day + "the total cases per million people in the world was " + casesm + "."
+    return fact
+
 if __name__=="__main__":
     app.run(debug=True)
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
