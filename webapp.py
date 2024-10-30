@@ -9,7 +9,7 @@ app = Flask(__name__) #__name__ = "__main__" if this is the file that was run.  
 """@app.route("/")
 def render_main():
     return render_template('file1.html')"""
-@app.route("/")
+@app.route("/f4")
 def render_file4():
     cases = get_cases_day()
     return render_template('file4.html', data = cases)
@@ -55,7 +55,7 @@ def get_deaths_day():
 
 
 
-@app.route("/f1")
+@app.route("/")
 def render_file11():
       return render_template('file1.html')
   

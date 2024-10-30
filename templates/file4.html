@@ -29,7 +29,7 @@ var chart = new CanvasJS.Chart("chartContainer", {
 		includeZero: true
 	},
 	data: [{
-		type: "column",
+		type: "spline",
 		yValueFormatString: "#,### Cases",
 		dataPoints: {{data}}
 	}]
@@ -45,39 +45,7 @@ var chart = new CanvasJS.Chart("chartContainer", {
 </head>
 
 <meta charset="utf-8">
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <body>
-
-
-
-
-	
-
-
-
-
-
-
-
-
-
 <div id="chartContainer" style="height: 370px; width: 100%;"></div>
 <script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
 <script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
